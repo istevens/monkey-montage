@@ -5,7 +5,7 @@ from pythonmagickwand.wand import LANCZOS_FILTER, TRANSPARENT_COLORSPACE
 from pythonmagickwand.color import Color, BLACK, YELLOW, TRANSPARENT
 
 YELLOW = Color('#ffcc33')
-m = Image('foo.png')
+m = Image('monkey.png')
 m.opaque_paint(BLACK, YELLOW, 10)
 m.scale((500,500))
 m.compression_quality = 95
@@ -17,7 +17,7 @@ im.format = 'PNG'
 im.background_color = TRANSPARENT
 _w, _h = im.size
 
-num = range(2000)
+num = range(3000)
 for i in num:
     ratio = (i+1.)/len(num)
 
@@ -35,6 +35,6 @@ for i in num:
     im.composite(c, (random.randint(0-c.size[0], _w), y))
 
 im.scale((1000, 200))
-#im.quantize(32)
+im.quantize(32, TRANSPARENT_COLORSPACE)
 #im.opaque_paint(YELLOW, YELLOW, 10)
 im.save('out.png')
