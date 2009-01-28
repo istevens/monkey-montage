@@ -36,5 +36,5 @@ for i in num:
 
 im.scale((1000, 200))
 im.quantize(32, TRANSPARENT_COLORSPACE)
-#im.opaque_paint(YELLOW, YELLOW, 10)
+im.opaque_paint(YELLOW, YELLOW, 10)
 im.save('out.png')
